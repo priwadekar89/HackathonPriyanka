@@ -11,8 +11,8 @@
 Full Name:<input type="text"  name="fname"><br><br>
 Email:<input type="text" name="email"><br><br>
 Mobile no:<input type="text" name="mobile"><br><br>
-City<input type="text"  name="city" required><br><br>
-State<select name="state">
+City: <input type="text"  name="city" required><br><br>
+State: <select name="state">
         <option value="Andhra Pradesh">Andhra Pradesh</option>
         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
         <option value="Assam">Assam</option>
@@ -43,7 +43,16 @@ State<select name="state">
         <option value="Uttar Pradesh">Uttar Pradesh</option>
 <option value="West Bengal">West Bengal</option> 
 <br>
-DOB<input type="text" name="dob"><br><br>
+
+DOB: <input type="text" name="dob"><br><br>
+
+State: <input type="text" name="state">
+
+City: <input type="text" name="city">
+
+Pincode: <input type="text" name="zipcode">
+
+
 
 <input type="submit" value="Register">
 </form>
