@@ -47,19 +47,13 @@ public class RegistrationController
 	@RequestMapping("/startExam")
 	public ModelAndView startExam(ModelAndView model) {
 		List<Map<String, Object>> qnlist = edao.getQuestion();
-		for(Map<String, Object> qn: qnlist) {
-			Questions q = new Questions();
-			q.setQuestion((String)qn.get("gq_question"));
-			q.setOp1((String)qn.get("gq_op1"));
-			q.setOp2((String)qn.get("gq_op2"));
-			q.setOp3((String)qn.get("gq_op3"));
-			q.setOp4((String)qn.get("gq_op4"));
-			System.out.println(q);
-			model.addObject("questionData", q);
-		}
-		System.out.println(qnlist);
-		//System.out.println(q);
-		//model.addObject("questionData", q);
+		Questions q = new Questions();
+		q.setQuestion((String)qnlist.get(0).get("gq_question"));
+		q.setOp1((String)qnlist.get(0).get("gq_op1"));
+		q.setOp2((String)qnlist.get(0).get("gq_op2"));
+		q.setOp3((String)qnlist.get(0).get("gq_op3"));
+		q.setOp4((String)qnlist.get(0).get("gq_op4"));
+		model.addObject("questionData", q);
 		model.setViewName("ExamPage");
 		return model;
 	}
