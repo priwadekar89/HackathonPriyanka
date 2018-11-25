@@ -17,11 +17,12 @@ public class RegistrationDAO
 	{
 		int i=0;
 		System.out.println("in save data..");
-		String userTableQuery="insert into gr7_users values(gu_id_seq.nextval,'"+user.getFname()+"','"+user.getMobile()+"','"+user.getEmail()+"','"+user.getDob()+"','"+addr.getId()+"')";
-
+		String addrTableQuery="insert into gr7_address values(ga_id_seq.nextval, '"+addr.getState()+"', '"+addr.getCity()+"', '"+addr.getZipcode()+"')";
+		int j = jdbcTemplate.update(addrTableQuery);
+//		String sql_ga_id = "SELECT id FROM tableNmae WHERE column_name = ga_id_seq.currval";
+//		int	current_address_id = (Integer) jdbcTemplate.queryForObject( sql_ga_id, new Object[] { ga_id }, Integer.class);
+		String userTableQuery="insert into gr7_users values(gu_id_seq.nextval,'"+user.getFname()+"','"+user.getMobile()+"','"+user.getEmail()+"','"+user.getDob()+"', '"+addr.getId()+"')";
 		i= jdbcTemplate.update(userTableQuery);
-
-
 
 
 		//String accountTableQuery="insert into g13_accounts values('+g13_account_seq.nextval+','"+account.getAccount_type()+"','"+50000+"','+g13_customer_seq.currval')";
