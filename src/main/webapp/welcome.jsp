@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-data saved
+	<a href="UserLogin.jsp">Click here to login</a>
 </body>
 </html>

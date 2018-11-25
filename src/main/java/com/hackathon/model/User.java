@@ -8,11 +8,19 @@ public class User {
 	private String mobile;
 	private String dob;
 	private int addrId;
+	private String password;
+
 	//private String qualification;
 	//private long yoc;
 	
 	public int getAddrId() {
 		return addrId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public void setAddrId(int addrId) {
 		this.addrId = addrId;

@@ -11,7 +11,7 @@
 Full Name:<input type="text"  name="fname"><br><br>
 Email:<input type="text" name="email"><br><br>
 Mobile no:<input type="text" name="mobile"><br><br>
-City: <input type="text"  name="city" required><br><br>
+
 State: <select name="state">
         <option value="Andhra Pradesh">Andhra Pradesh</option>
         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -52,7 +52,7 @@ City: <input type="text" name="city">
 
 Pincode: <input type="text" name="zipcode">
 
-
+Password: <input type="password" name="password">
 
 <input type="submit" value="Register">
 </form>
