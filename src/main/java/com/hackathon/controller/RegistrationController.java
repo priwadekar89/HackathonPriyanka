@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hackathon.dao.RegistrationDAO;
-import com.hackathon.model.Address;
-import com.hackathon.model.User;
+import com.hackathon.model.*;
 
 @Controller
 public class RegistrationController
@@ -40,6 +39,15 @@ public class RegistrationController
 			model.setViewName("UserLogin");
 			return model;
 		}
+	}
+	
+	@RequestMapping("/startExam")
+	public ModelAndView startExam(ModelAndView model) {
+		Questions q = edao.getQuestion();
+		System.out.println(q);
+		model.addObject("questionData", q);
+		model.setViewName("ExamPage");
+		return model;
 	}
 
 	/*

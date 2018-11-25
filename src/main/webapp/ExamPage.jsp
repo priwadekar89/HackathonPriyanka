@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <a href="Report.jsp">View your Report</a>
-  <a href="ExamInstructions.jsp">Give Exam</a>
+	Question: ${questionData.getQuestion()}
+	Option 1: 
+	Option 2:
+	Option 3:
+	Option 4:
+	
+	Your Ans: FO	
 </body>
 </html>

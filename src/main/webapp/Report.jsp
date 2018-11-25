@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <a href="Report.jsp">View your Report</a>
-  <a href="ExamInstructions.jsp">Give Exam</a>
+
 </body>
 </html>

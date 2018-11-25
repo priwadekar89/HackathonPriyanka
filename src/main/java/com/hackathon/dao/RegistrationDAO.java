@@ -1,8 +1,8 @@
 package com.hackathon.dao;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.hackathon.model.Address;
-import com.hackathon.model.User;
+import com.hackathon.model.*;
 
 public class RegistrationDAO 
 {
@@ -53,6 +53,14 @@ public class RegistrationDAO
 			return true;
 		else
 			return false;
+	}
+	
+	public Questions getQuestion() {
+		
+		 String sql="select * from gr7_questions where gq_id=102"; 
+
+		 return (Questions)jdbcTemplate.queryForObject(sql, Questions.class); 
+		
 	}
 }
 
