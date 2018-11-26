@@ -48,15 +48,14 @@ public class RegistrationController
 		}
 	}
 
+	int listcount=0;
+	int count=0;
 	@RequestMapping("/startExam")
 	public ModelAndView startExam(HttpServletRequest req, HttpServletResponse res, ModelAndView model) {
 		
 		List<Map<String, Object>> qnlist = edao.getQuestion();
-		int listcount=0;
-		HttpSession ses = req.getSession(false);
-		if ( !ses.isNew()) {
-			listcount++;
-			int count=0;
+		
+		HttpSession ses = req.getSession(true);
 			ses = req.getSession(true);
 			ses.setAttribute("counter", count);
 			Questions q = new Questions();
@@ -68,28 +67,29 @@ public class RegistrationController
 			model.addObject("questionData", q);
 			model.setViewName("ExamPage");
 			return model;
-		}
-		else {
-			while(listcount<=qnlist.size()) {
-				listcount++;
-				int count = (Integer)ses.getAttribute("counter");
-				count++;
-				ses.setAttribute("counter", count);
-				Questions q = new Questions();
-				q.setQuestion((String)qnlist.get(count).get("gq_question"));
-				q.setOp1((String)qnlist.get(count).get("gq_op1"));
-				q.setOp2((String)qnlist.get(count).get("gq_op2"));
-				q.setOp3((String)qnlist.get(count).get("gq_op3"));
-				q.setOp4((String)qnlist.get(count).get("gq_op4"));
-				model.addObject("questionData", q);
-				model.setViewName("ExamPage");
-			}
-			return model;
-		}
 	}
 
 	@RequestMapping("/nextQn")
-	public ModelAndView nextQn(ModelAndView model, @ModelAttribute Questions option) {
+	public ModelAndView nextQn(HttpServletRequest req, HttpServletResponse res, ModelAndView model, @ModelAttribute Questions option) {
+		List<Map<String, Object>> qnlist = edao.getQuestion();
+		System.out.println("in nextQn");
+		System.out.println();
+		HttpSession ses = req.getSession(false);
+		while(listcount<=qnlist.size()) {
+			int count = (Integer)ses.getAttribute("counter");
+			System.out.println(count);
+			Questions q = new Questions();
+			q.setQuestion((String)qnlist.get(count).get("gq_question"));
+			q.setOp1((String)qnlist.get(count).get("gq_op1"));
+			q.setOp2((String)qnlist.get(count).get("gq_op2"));
+			q.setOp3((String)qnlist.get(count).get("gq_op3"));
+			q.setOp4((String)qnlist.get(count).get("gq_op4"));
+			listcount++;
+			count++;
+			ses.setAttribute("counter", count);
+			model.addObject("questionData", q);
+			model.setViewName("ExamPage");
+		}
 		return model;
 	}
 }

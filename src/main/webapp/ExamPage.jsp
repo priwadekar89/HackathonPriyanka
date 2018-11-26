@@ -9,11 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+			<h1>Level 1 Exam</h1>
+	
 	Question: ${questionData.getQuestion()}
 
 	<div align="center">
-		<h1>Level 1 Exam</h1>
-		<form action="startExam" method="post">
+
+		<form action="nextQn" method="post">
 					<input type="radio" name="op" value="${questionData.getOp1()}">${questionData.getOp1()}<br>
 					<input type="radio" name="op" value="${questionData.getOp2()}">${questionData.getOp2()}<br>
 					<input type="radio" name="op" value="${questionData.getOp3()}">${questionData.getOp3()}<br>
