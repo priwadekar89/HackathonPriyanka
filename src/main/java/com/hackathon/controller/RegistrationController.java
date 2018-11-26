@@ -53,11 +53,11 @@ public class RegistrationController
 		
 		List<Map<String, Object>> qnlist = edao.getQuestion();
 		int listcount=0;
-		HttpSession oldSes = req.getSession(false);
-		if (oldSes == null) {
+		HttpSession ses = req.getSession(false);
+		if ( !ses.isNew()) {
 			listcount++;
 			int count=0;
-			HttpSession ses = req.getSession(true);
+			ses = req.getSession(true);
 			ses.setAttribute("counter", count);
 			Questions q = new Questions();
 			q.setQuestion((String)qnlist.get(count).get("gq_question"));
@@ -72,9 +72,9 @@ public class RegistrationController
 		else {
 			while(listcount<=qnlist.size()) {
 				listcount++;
-				int count = (Integer)oldSes.getAttribute("counter");
+				int count = (Integer)ses.getAttribute("counter");
 				count++;
-				oldSes.setAttribute("counter", count);
+				ses.setAttribute("counter", count);
 				Questions q = new Questions();
 				q.setQuestion((String)qnlist.get(count).get("gq_question"));
 				q.setOp1((String)qnlist.get(count).get("gq_op1"));
