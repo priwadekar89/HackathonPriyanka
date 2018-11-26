@@ -13,7 +13,7 @@
 
 	<div align="center">
 		<h1>Level 1 Exam</h1>
-		<form:form action="nextQuestion" method="post">
+		<form:form action="startExam" method="post">
 
 
 				<form>
