@@ -2,6 +2,6 @@
 <body>
 
 <a href="Register.jsp">Register</a><br>
-<a href="Login.jsp">Login</a>
+<a href="UserLogin.jsp">Login</a>
 </body>
 </html>
