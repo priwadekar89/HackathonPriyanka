@@ -31,12 +31,11 @@
 		</property>
 	</bean>
 	
-		<bean id="user" class="com.hackathon.model.User">
-
-	</bean>
-	
-	<bean id="addr" class="com.hackathon.model.Address">
-	</bean>
+	<bean id="uploadService" class="com.hackathon.service.FileUploadService"
+        autowire="byType"></bean>
+        
+    <bean id="uploadDao" class="com.hackathon.dao.UploadDAO"
+        autowire="byType"></bean>
 	
 	
 	

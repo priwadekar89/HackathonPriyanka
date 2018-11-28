@@ -46,8 +46,6 @@ State: <select name="state">
 
 DOB: <input type="text" name="dob"><br><br>
 
-State: <input type="text" name="state">
-
 City: <input type="text" name="city">
 
 Pincode: <input type="text" name="zipcode">
